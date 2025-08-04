@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 4.3</title>
+</head>
+<body>
+  <h1>User Information</h1>
+
+  <script>
+    const currentYear = new Date().getFullYear();
+
+    const birthYear = prompt("Enter your birth year:");
+    const city = prompt("Enter the city you live in:");
+    const sport = prompt("Enter your favorite sport:");
+
+    let message = "";
+
+    // Cancel check
+    if (!birthYear) {
+      message += "Too bad you didn't want to enter your birth year.\n";
+    }
+    if (!city) {
+      message += "Too bad you didn't want to enter your city.\n";
+    }
+    if (!sport) {
+      message += "Too bad you didn't want to enter your favorite sport.\n";
+    }
+
+    // If all inputs are valid
+    if (birthYear && city && sport) {
+      const age = currentYear - Number(birthYear);
+
+      // Capital cities check
+      let cityMessage = "";
+      if (city.toLowerCase() === "kyiv") {
+        cityMessage = "You live in the capital of Ukraine.";
+      } else if (city.toLowerCase() === "washington") {
+        cityMessage = "You live in the capital of the USA.";
+      } else if (city.toLowerCase() === "london") {
+        cityMessage = "You live in the capital of the UK.";
+      } else {
+        cityMessage = `You live in the city ${city}.`;
+      }
+
+      // Sports check
+      let sportMessage = "";
+      if (sport.toLowerCase() === "football") {
+        sportMessage = "Cool! Do you want to become like Lionel Messi?";
+      } else if (sport.toLowerCase() === "boxing") {
+        sportMessage = "Cool! Do you want to become like Oleksandr Usyk?";
+      } else if (sport.toLowerCase() === "tennis") {
+        sportMessage = "Cool! Do you want to become like Serena Williams?";
+      } else {
+        sportMessage = `Your favorite sport is ${sport}.`;
+      }
+
+      message = `Your age is ${age}.\n${cityMessage}\n${sportMessage}`;
+    }
+
+    alert(message);
+  </script>
+</body>
+</html>
