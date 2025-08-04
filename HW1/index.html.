@@ -1,32 +1,33 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Домашнє завдання</title>
+  <title>Homework</title>
 </head>
 <body>
-  <h1>Типи даних</h1>
+  <h1>Data Types</h1>
 
   <script>
-    let текст = "Привіт";           // текст, тип string
-    let число = 123;                // число, тип number
-    let правда = true;              // логічне значення, тип boolean
-    let нічого = null;              // нічого, тип null (але покаже "object")
-    let невідоме;                   // не визначено, тип undefined
-    let символ = Symbol("id");      // символ, тип symbol
-    let велике = 123456789n;        // велике число, тип bigint
-    let обʼєкт = { імʼя: "Оля" };   // обʼєкт, тип object
-    let функція = function() {};    // функція, тип function
+    let text = "Hello";               // string
+    let number = 123;                 // number
+    let isTrue = true;                // boolean
+    let nothing = null;               // null (typeof = "object")
+    let undef;                        // undefined
+    let symbol = Symbol("id");        // symbol
+    let bigInt = 123456789n;          // bigint
+    let obj = { name: "Olivia" };     // object
+    let func = function() {};         // function
 
-    console.log(typeof текст);
-    console.log(typeof число);
-    console.log(typeof правда);
-    console.log(typeof нічого);
-    console.log(typeof невідоме);
-    console.log(typeof символ);
-    console.log(typeof велике);
-    console.log(typeof обʼєкт);
-    console.log(typeof функція);
+    console.log(typeof text);     // string
+    console.log(typeof number);   // number
+    console.log(typeof isTrue);   // boolean
+    console.log(typeof nothing);  // object (special case)
+    console.log(typeof undef);    // undefined
+    console.log(typeof symbol);   // symbol
+    console.log(typeof bigInt);   // bigint
+    console.log(typeof obj);      // object
+    console.log(typeof func);     // function
   </script>
 </body>
 </html>
+
