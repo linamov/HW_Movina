@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework 3.3</title>
+</head>
+<body>
+  <h1>Homework 3.3: Split 5-digit number into digits</h1>
+  <script>
+    let number = prompt("Enter a 5-digit number:");
+    
+    if (number.length === 5 && /^\d{5}$/.test(number)) {
+      let digits = number.split('');
+      console.log(digits.join(' '));
+    } else {
+      console.log("Please enter exactly a 5-digit number.");
+    }
+  </script>
+</body>
+</html>
