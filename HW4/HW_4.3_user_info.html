@@ -10,57 +10,61 @@
   <script>
     const currentYear = new Date().getFullYear();
 
-    // Birth year
     const birthYear = prompt("What's your birth year?");
-    if (!birthYear) {
-      alert("Oh no! Hiding your age, huh? 🕵️‍♂️ Mysterious!");
-    }
-
-    // City
     const city = prompt("Which city do you live in?");
-    if (!city) {
-      alert("No city? Are you a nomad? 🏕️ Or from a secret base?");
-    }
-
-    // Favorite sport
     const sport = prompt("What's your favorite sport?");
-    if (!sport) {
-      alert("No sport? Couch potato detected! 🥔📺");
+
+    let birthMessage = "";
+    let cityMessage = "";
+    let sportMessage = "";
+
+    // AGE
+    if (!birthYear) {
+      birthMessage = "Oh no! Hiding your age, huh? 🕵️‍♂️ Mysterious!";
+    } else {
+      const age = currentYear - Number(birthYear);
+      birthMessage = `🎂 You are ${age} years old. Don't worry, you still look 18!`;
     }
 
-    let message = "";
-
-    if (birthYear && city && sport) {
-      const age = currentYear - Number(birthYear);
-
-      let cityMessage = "";
+    // CITY
+    if (!city) {
+      cityMessage = "No city? Are you a nomad? 🏕️ Or from a secret base?";
+    } else {
       const cityLower = city.toLowerCase();
       if (cityLower === "kyiv") {
-        cityMessage = "You live in the capital of Ukraine – Kyiv! 🇺🇦";
+        cityMessage = "🇺🇦 You live in the capital of Ukraine – Kyiv! ";
       } else if (cityLower === "washington") {
-        cityMessage = "You live in the capital of the USA – Washington! 🗽";
+        cityMessage = "🗽 You live in the capital of the USA – Washington!";
       } else if (cityLower === "london") {
-        cityMessage = "You live in the capital of the UK – London! 🎡";
+        cityMessage = "🎡 You live in the capital of the UK – London!";
       } else {
-        cityMessage = `You live in the city of ${city}. Sounds cool! 🌆`;
+        cityMessage = `🏘️ You live in ${city}. Sounds like a lovely place!`;
       }
+    }
 
-      let sportMessage = "";
+    // SPORT
+    if (!sport) {
+      sportMessage = "🎮 No favorite sport? Maybe your superpower is Netflix marathons?";
+    } else {
       const sportLower = sport.toLowerCase();
       if (sportLower === "football") {
-        sportMessage = "Cool! Wanna be the next Lionel Messi? ⚽";
+        sportMessage = "⚽ Cool! Wanna be the next Lionel Messi?";
       } else if (sportLower === "boxing") {
-        sportMessage = "Boom! Future champ like Oleksandr Usyk? 🥊";
+        sportMessage = "🥊 Boom! Future champ like Oleksandr Usyk?";
       } else if (sportLower === "tennis") {
-        sportMessage = "Ace! Serena Williams better watch out! 🎾";
+        sportMessage = "🎾 Ace! Serena Williams better watch out!";
       } else {
-        sportMessage = `Your favorite sport is ${sport}. That's awesome! 💪`;
+        sportMessage = `💪 Your favorite sport is ${sport}. Respect!`;
       }
-
-      message = `You're ${age} years old.\n${cityMessage}\n${sportMessage}`;
-      alert(message);
     }
+
+    // FINAL OUTPUT 
+    alert(
+      "📝 Here's what we got about you:\n\n" +
+      birthMessage + "\n" +
+      cityMessage + "\n" +
+      sportMessage
+    );
   </script>
 </body>
 </html>
-
