@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework 4.4</title>
+</head>
+<body>
+  <h1>switch…case</h1>
+
+  <script>
+    let numOrStr = prompt('Input number or string');
+    console.log(numOrStr);
+
+    switch (true) {
+      case numOrStr === null:
+        console.log('You cancelled');
+        break;
+      case numOrStr.trim() === '':
+        console.log('Empty string');
+        break;
+      case isNaN(+numOrStr):
+        console.log('Not a number');
+        break;
+      default:
+        console.log('OK!');
+        break;
+    }
+  </script>
+</body>
+</html>
