@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework 4.2</title>
+</head>
+<body>
+  <h1>Homework 4.2: Check Digits</h1>
+
+  <script>
+    let number = prompt("Enter a 3-digit number:");
+
+    if (/^\d{3}$/.test(number)) {
+      let a = number[0];
+      let b = number[1];
+      let c = number[2];
+
+      if (a === b && b === c) {
+        console.log("All digits are the same.");
+      } else if (a === b || b === c || a === c) {
+        console.log("Some digits are the same.");
+      } else {
+        console.log("All digits are different.");
+      }
+    } else {
+      console.log("Please enter a valid 3-digit number.");
+    }
+  </script>
+</body>
+</html>
