@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework 4</title>
+</head>
+<body>
+  <h1>Homework 4.1: Greeting User</h1>
+  <script>
+    let userName = prompt("Please enter your name:");
+    alert(`Hello, ${userName}! How are you?`);
+  </script>
+</body>
+</html>
