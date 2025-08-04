@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Homework 4.3</title>
+  <title>Homework 4.4</title>
 </head>
 <body>
   <h1>User Info</h1>
@@ -10,41 +10,39 @@
   <script>
     const currentYear = new Date().getFullYear();
 
+    // Birth year
     const birthYear = prompt("What's your birth year?");
-    const city = prompt("Which city do you live in?");
-    const sport = prompt("What's your favorite sport?");
-
     let birthMessage = "";
-    let cityMessage = "";
-    let sportMessage = "";
-
-    // AGE
     if (!birthYear) {
-      birthMessage = "Oh no! Hiding your age, huh? 🕵️‍♂️ Mysterious!";
+      alert("🙈 Oh no! Hiding your age, huh?  Mysterious!");
     } else {
       const age = currentYear - Number(birthYear);
-      birthMessage = `🎂 You are ${age} years old. Don't worry, you still look 18!`;
+      birthMessage = `🎂 You are ${age} years old. Nice!`;
     }
 
-    // CITY
+    // City
+    const city = prompt("Which city do you live in?");
+    let cityMessage = "";
     if (!city) {
-      cityMessage = "No city? Are you a nomad? 🏕️ Or from a secret base?";
+      alert("🏙️ No city? Are you a nomad? Or from a secret base?");
     } else {
       const cityLower = city.toLowerCase();
       if (cityLower === "kyiv") {
-        cityMessage = "🇺🇦 You live in the capital of Ukraine – Kyiv! ";
+        cityMessage = "🇺🇦 You live in Kyiv – the capital of Ukraine!";
       } else if (cityLower === "washington") {
-        cityMessage = "🗽 You live in the capital of the USA – Washington!";
+        cityMessage = "🗽 You live in Washington – capital of the USA!";
       } else if (cityLower === "london") {
-        cityMessage = "🎡 You live in the capital of the UK – London!";
+        cityMessage = "🎡 You live in London – capital of the UK!";
       } else {
         cityMessage = `🏘️ You live in ${city}. Sounds like a lovely place!`;
       }
     }
 
-    // SPORT
+    // Sport
+    const sport = prompt("What's your favorite sport?");
+    let sportMessage = "";
     if (!sport) {
-      sportMessage = "🎮 No favorite sport? Maybe your superpower is Netflix marathons?";
+      alert("🎮 No favorite sport? Maybe your superpower is Netflix marathons!");
     } else {
       const sportLower = sport.toLowerCase();
       if (sportLower === "football") {
@@ -58,13 +56,13 @@
       }
     }
 
-    // FINAL OUTPUT 
-    alert(
-      "📝 Here's what we got about you:\n\n" +
-      birthMessage + "\n" +
-      cityMessage + "\n" +
-      sportMessage
-    );
+    // Show summary only with filled answers
+    let summary = "📝 Here's what we got:\n\n";
+    if (birthMessage) summary += birthMessage + "\n";
+    if (cityMessage) summary += cityMessage + "\n";
+    if (sportMessage) summary += sportMessage;
+
+    alert(summary);
   </script>
 </body>
 </html>
