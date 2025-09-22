@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Homework 5.2</title>
+</head>
+<body>
+  <h1>Homework 5.2: Dollar to Hryvnia Conversion</h1>
+  <script>
+    const exchangeRate = 26;
+    for (let dollars = 10; dollars <= 100; dollars += 10) {
+      let hryvnias = dollars * exchangeRate;
+      console.log(`${dollars} USD = ${hryvnias} UAH`);
+    }
+  </script>
+</body>
+</html>
